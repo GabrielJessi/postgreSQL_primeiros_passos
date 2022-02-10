@@ -101,6 +101,6 @@ SELECT
   FROM funcionarios
   GROUP BY nome, sobrenome
   ORDER BY nome; 
+  
 # O comando GROUP BY é um agrupamento para realização de buscas com funções de agregação. 
 # Em outras palavras, se o agrupamento da busca não precisar de agregação, realizamos com DISTINCT , do contrário, codaremos com GROUP BY .
-
