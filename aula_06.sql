@@ -76,3 +76,31 @@ SELECT
 
 # AGRUPANDO CONSULTAS
 
+INSERT  INTO funcionarios (nome) VALUES ('Diogo');
+
+INSERT  INTO funcionarios (nome) VALUES ('Diogo');
+
+SELECT nome 
+  FROM funcionarios; 
+  ORDER BY nome;
+  
+# Adicionando o comando ORDER BY nome; à nossa busca, perceberemos a presença de três Diogo s
+# Existem duas formas desse nome não se repetir nos resultados. A primeira que conheceremos será a partir do DISTINCT.
+
+SELECT DISTINCT
+        nome, sobreno
+  FROM funcionarios
+  ORDER BY nome;
+# O DISTINCT garante que os dados do campo solicitado não se repitam.
+
+
+SELECT
+       nome,
+       sobrenome,
+       COUNT(*)
+  FROM funcionarios
+  GROUP BY nome, sobrenome
+  ORDER BY nome; 
+# O comando GROUP BY é um agrupamento para realização de buscas com funções de agregação. 
+# Em outras palavras, se o agrupamento da busca não precisar de agregação, realizamos com DISTINCT , do contrário, codaremos com GROUP BY .
+
