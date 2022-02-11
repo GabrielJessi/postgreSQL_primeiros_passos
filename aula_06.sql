@@ -101,6 +101,20 @@ SELECT
   FROM funcionarios
   GROUP BY nome, sobrenome
   ORDER BY nome; 
-  
 # O comando GROUP BY é um agrupamento para realização de buscas com funções de agregação. 
 # Em outras palavras, se o agrupamento da busca não precisar de agregação, realizamos com DISTINCT , do contrário, codaremos com GROUP BY .
+
+
+SELECT *
+    FROM aluno
+    JOIN aluno_curso ON aluno.id = aluno_curso.aluno_id
+    JOIN curso ON curso.id = aluno_curso.curso_id;
+
+SELECT curso.nome,
+	COUNT (aluno.id)
+    FROM aluno
+    JOIN aluno_curso ON aluno.id = aluno_curso.aluno_id
+    JOIN curso ON curso.id = aluno_curso.curso_id
+    GROUP BY 1
+    ORDER BY 1
+# Executando o código, constatamos que o count retornou a quantidade de alunos por curso, contados pela quantidade de id's.
